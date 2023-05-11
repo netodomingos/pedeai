@@ -1,12 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import Routes from './src/routes/Routes';
+
+import { useFonts } from 'expo-font'
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'Regular': require('./assets/fonts/Nunito-Regular.ttf'),
+    'SemiBold': require('./assets/fonts/Nunito-SemiBold.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <>
       <StatusBar style="auto" />
-    </View>
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
+    </>
   );
 }
 
