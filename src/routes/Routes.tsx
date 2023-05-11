@@ -23,7 +23,7 @@ export default function Routes() {
       }}
     >
       <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }}/>
-      <Stack.Screen name="Email" component={Email} />
+      <Stack.Screen name="Email" component={Email} options={{ title: 'Entrar com E-mail' }}/>
       <Stack.Screen name="Code" component={Email} />
     </Stack.Navigator>
   );
