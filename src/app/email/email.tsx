@@ -3,29 +3,21 @@ import Button from '../../components/button'
 import Title from '../../components/title'
 import SubTitle from '../../components/subtitle'
 
-import { ParamListBase, useNavigation } from '@react-navigation/native'
-import { StackNavigationProp } from '@react-navigation/stack'
-
-
-export default function Welcome() {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
-
+export default function Email() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image 
-          source={require('../../../assets/images/welcome.png')}
-        />
-      </View>
       <View style={styles.TextContainer}>
-        <Title text='Bem vindo ao pede.ai'/>
-        <SubTitle text='Faça login para conferir nossas ofertas'/>
+        <Title text='Insira seu e-mail'/>
+        <SubTitle text='Enviaremos um código de confirmação'/>
+      </View>
+      <View style={styles.formContainer}>
+       
       </View>
       <View style={styles.ButtonContainer}>
         <Button 
-          text='Entrar com e-mail'
-          icon={true}
-          onClick={() => navigation.navigate('Email')}
+          text='Solicitar código'
+          icon={false}
+          onClick={() => {}}
         />
       </View>
     </SafeAreaView>
@@ -38,7 +30,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'column',
   },
-  imageContainer: {
+  formContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 50

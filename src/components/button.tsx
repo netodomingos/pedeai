@@ -3,9 +3,9 @@ import { IButton } from '../interfaces/IButton'
 import { Colors } from '../constants/colors';
 import { Feather } from '@expo/vector-icons';
 
-export default function Button({ text, disabled, icon, loading }: IButton) {
+export default function Button({ text, disabled, icon, loading, onClick }: IButton) {
   return (
-    <TouchableOpacity disabled={disabled} style={styles.button}>
+    <TouchableOpacity disabled={disabled} style={styles.button} onPress={onClick}>
         {loading ? (
                 <ActivityIndicator color={Colors.white} size={24} />
             ) : (
