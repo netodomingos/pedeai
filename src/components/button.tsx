@@ -5,7 +5,7 @@ import { Feather } from '@expo/vector-icons';
 
 export default function Button({ text, disabled, icon, loading, onClick }: IButton) {
   return (
-    <TouchableOpacity disabled={disabled} style={styles.button} onPress={onClick}>
+    <TouchableOpacity disabled={disabled} style={[styles.button, { backgroundColor: disabled ? Colors.disabled : Colors.primary }]} onPress={onClick}>
         {loading ? (
                 <ActivityIndicator color={Colors.white} size={24} />
             ) : (
@@ -21,7 +21,6 @@ export default function Button({ text, disabled, icon, loading, onClick }: IButt
 
 const styles = StyleSheet.create({
     button: {
-      backgroundColor: Colors.primary,
       width: '90%',
       paddingVertical: 14,
       borderRadius: 8,

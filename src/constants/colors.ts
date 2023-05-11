@@ -3,5 +3,6 @@ export const Colors = {
     font: '#333333',
     new: '#00B333',
     background: '#F1F2F4',
-    white: '#FFFFFF'
+    white: '#FFFFFF',
+    disabled: '#C9c9c9'
 }

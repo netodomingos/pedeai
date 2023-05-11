@@ -5,10 +5,15 @@ import Button from '../../components/button'
 import Title from '../../components/title'
 import SubTitle from '../../components/subtitle'
 import Input from '../../components/input'
+import { handleValidEmail } from '../../utils/EmailValid'
 
 export default function Email() {
   const [email, setEmail] = useState('')
   const { height } = useWindowDimensions()
+
+  function handleSendEmail(){
+    
+  }
 
   return (
     <ScrollView style={styles.scrollView}>
@@ -20,17 +25,17 @@ export default function Email() {
           </View>
           <View style={styles.formContainer}>
           <Input 
-              value={email}
-              onChange={(text: string) => setEmail(text)}
-              placeholder=''
-              error=''
+            value={email}
+            onChange={(text: string) => setEmail(text)}
+            placeholder=''
           />
           </View>
           <View style={styles.ButtonContainer}>
             <Button 
               text='Solicitar código'
               icon={false}
-              onClick={() => {}}
+              onClick={() => handleSendEmail()}
+              disabled={handleValidEmail(email)}
             />
           </View>
         </KeyboardAvoidingView>
