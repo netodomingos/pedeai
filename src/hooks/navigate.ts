@@ -1,10 +1,9 @@
 
 import { ParamListBase, useNavigation} from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack'
-import { INavigate } from '../interfaces/INavigate';
 
-export default function navigate({ route }: INavigate) {
-    const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+export default function navigation() {
+    const { navigate } = useNavigation<StackNavigationProp<ParamListBase>>();
     
-    navigation.navigate(route)
+    return (route: string) => navigate(route)
 }

@@ -1,14 +1,13 @@
 import { SafeAreaView, StyleSheet, View, Image } from 'react-native'
+
+import navigation from '../../hooks/navigate'
+
 import Button from '../../components/button'
 import Title from '../../components/title'
 import SubTitle from '../../components/subtitle'
 
-import { ParamListBase, useNavigation } from '@react-navigation/native'
-import { StackNavigationProp } from '@react-navigation/stack'
-
-
 export default function Welcome() {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigate = navigation()
 
   return (
     <SafeAreaView style={styles.container}>
@@ -25,7 +24,7 @@ export default function Welcome() {
         <Button 
           text='Entrar com e-mail'
           icon={true}
-          onClick={() => navigation.navigate('Email')}
+          onClick={() => navigate('Email')}
         />
       </View>
     </SafeAreaView>
