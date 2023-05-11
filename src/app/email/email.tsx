@@ -5,14 +5,17 @@ import Button from '../../components/button'
 import Title from '../../components/title'
 import SubTitle from '../../components/subtitle'
 import Input from '../../components/input'
+
 import { handleValidEmail } from '../../utils/EmailValid'
+import { useSendToken } from '../../hooks/useSendToken'
 
 export default function Email() {
   const [email, setEmail] = useState('')
   const { height } = useWindowDimensions()
+  const { loading, result, verifyEmail } =  useSendToken(email)  
 
-  function handleSendEmail(){
-    
+  async function handleSendEmail(){
+    await verifyEmail()
   }
 
   return (
@@ -36,6 +39,7 @@ export default function Email() {
               icon={false}
               onClick={() => handleSendEmail()}
               disabled={handleValidEmail(email)}
+              loading={loading}
             />
           </View>
         </KeyboardAvoidingView>

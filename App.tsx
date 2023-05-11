@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Routes from './src/routes/Routes';
 
 import { useFonts } from 'expo-font'
+import Toast from 'react-native-toast-message';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -21,6 +22,7 @@ export default function App() {
       <NavigationContainer>
         <Routes />
       </NavigationContainer>
+      <Toast />
     </>
   );
 }
