@@ -1,5 +1,5 @@
 import { SafeAreaView, StyleSheet, View, ScrollView, KeyboardAvoidingView, useWindowDimensions } from 'react-native'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Button from '../../components/button'
 import Title from '../../components/title'
@@ -8,16 +8,29 @@ import Input from '../../components/input'
 
 import { handleValidEmail } from '../../utils/EmailValid'
 import { useSendToken } from '../../hooks/useSendToken'
+import navigation from '../../hooks/useNavigate'
 
 export default function Email() {
   const [email, setEmail] = useState('')
   const { height } = useWindowDimensions()
+  const navigate = navigation()
   const { loading, result, verifyEmail } =  useSendToken(email)  
 
+  
   async function handleSendEmail(){
     await verifyEmail()
   }
+  
+  function handleVerifyResult(){
+    navigate('Code', {
+      token: result?.token
+    })
+  }
 
+  useEffect(() => {
+    result !== undefined && handleVerifyResult()
+  }, [result])
+  
   return (
     <ScrollView style={styles.scrollView}>
       <SafeAreaView style={styles.container}>

@@ -1,6 +1,6 @@
 import { SafeAreaView, StyleSheet, View, Image } from 'react-native'
 
-import navigation from '../../hooks/navigate'
+import navigation from '../../hooks/useNavigate'
 
 import Button from '../../components/button'
 import Title from '../../components/title'
