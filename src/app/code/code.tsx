@@ -3,10 +3,28 @@ import { SafeAreaView, StyleSheet, View, ScrollView, KeyboardAvoidingView, useWi
 import Button from '../../components/button'
 import Title from '../../components/title'
 import SubTitle from '../../components/subtitle'
+import CodeField from '../../components/codeField'
+import { useState } from 'react'
+import { IRoute } from '../../interfaces/IRoute'
 
-export default function Code() {
+
+
+export default function Code({ route }: IRoute) {
   const { height } = useWindowDimensions()
+  const [code, setCode] = useState('')
+  const [error, setError] = useState(false)
+  
+  const codeRecived = route.params?.token  
 
+  function handleVerifyCode(){
+    if(code === codeRecived){
+      console.log('suces');
+      
+    } else {
+      setError(true)
+    }
+  }
+  
   return (
     <ScrollView style={styles.scrollView}>
       <SafeAreaView style={styles.container}>
@@ -16,13 +34,18 @@ export default function Code() {
             <SubTitle text='O código foi enviado para seu e-mail'/>
           </View>
           <View style={styles.formContainer}>
-
+            <CodeField 
+              code={code}
+              onChange={(text: string) => setCode(text)}
+              error={error}
+            />
           </View>
           <View style={styles.ButtonContainer}>
             <Button 
               text='Enviar'
               icon={false}
-              onClick={() => {}}
+              disabled={code.length < 6}
+              onClick={() => handleVerifyCode()}
             />
           </View>
         </KeyboardAvoidingView>
