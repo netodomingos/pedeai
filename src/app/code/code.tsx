@@ -6,25 +6,26 @@ import SubTitle from '../../components/subtitle'
 import CodeField from '../../components/codeField'
 import { useState } from 'react'
 import { IRoute } from '../../interfaces/IRoute'
-
+import { useLogin } from '../../hooks/useAuth'
+import { useDispatch } from '../../hooks/useNavigate'
 
 
 export default function Code({ route }: IRoute) {
   const { height } = useWindowDimensions()
+  const handlelogin = useLogin()
   const [code, setCode] = useState('')
   const [error, setError] = useState(false)
   
   const codeRecived = route.params?.token  
 
-  function handleVerifyCode(){
+  async function handleVerifyCode(){
     if(code === codeRecived){
-      console.log('suces');
-      
+      await handlelogin(codeRecived)
     } else {
       setError(true)
     }
   }
-  
+
   return (
     <ScrollView style={styles.scrollView}>
       <SafeAreaView style={styles.container}>

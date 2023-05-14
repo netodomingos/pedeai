@@ -1,13 +1,13 @@
 import { SafeAreaView, StyleSheet, View, Image } from 'react-native'
 
-import navigation from '../../hooks/useNavigate'
+import { useNavigate } from '../../hooks/useNavigate'
 
 import Button from '../../components/button'
 import Title from '../../components/title'
 import SubTitle from '../../components/subtitle'
 
 export default function Welcome() {
-  const navigate = navigation()
+  const navigate = useNavigate()
 
   return (
     <SafeAreaView style={styles.container}>

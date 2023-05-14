@@ -8,12 +8,12 @@ import Input from '../../components/input'
 
 import { handleValidEmail } from '../../utils/EmailValid'
 import { useSendToken } from '../../hooks/useSendToken'
-import navigation from '../../hooks/useNavigate'
+import { useNavigate } from '../../hooks/useNavigate'
 
 export default function Email() {
   const [email, setEmail] = useState('')
   const { height } = useWindowDimensions()
-  const navigate = navigation()
+  const navigate = useNavigate()
   const { loading, result, verifyEmail } =  useSendToken(email)  
 
   
