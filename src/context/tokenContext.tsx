@@ -24,24 +24,16 @@ export const AuthProvider = ({ children }: any) => {
   async function handleGetToken(){
     const token = await AsyncStorage.getItem('@token')
 
-    console.log('chamou');
-    
-
-
     if(token){
       setToken(token)
       setIsLogged(true)    
-
-      console.log('chamou 2');
-
     }
-
     setLoading(false)
   }
 
   return (
     <AuthContext.Provider 
-      value={{token, setToken, isLogged, setIsLogged, loading}}
+      value={{token, isLogged, loading, setIsLogged, setToken,}}
     >
       {children}
     </AuthContext.Provider>
