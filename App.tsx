@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import Routes from './src/routes/Routes';
-
 import { useFonts } from 'expo-font'
+
 import Toast from 'react-native-toast-message';
+
+import { AuthProvider } from './src/context/tokenContext';
+
+import Index from './index';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -14,24 +15,13 @@ export default function App() {
 
   if (!fontsLoaded) {
     return null;
+  } else {
+    return (
+      <AuthProvider>
+        <StatusBar style="auto" />
+        <Index />
+        <Toast />
+      </AuthProvider>
+    );
   }
-
-  return (
-    <>
-      <StatusBar style="auto" />
-      <NavigationContainer>
-        <Routes />
-      </NavigationContainer>
-      <Toast />
-    </>
-  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
