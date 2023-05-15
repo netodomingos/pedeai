@@ -5,6 +5,8 @@ import { Colors } from '../constants/colors';
 
 import Menu from '../app/menu/menu';
 import Profile from '../app/profile/profile';
+import Terms from '../app/terms/terms';
+import Policy from '../app/policy/policy';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,13 +35,15 @@ export default function AuthRoutes(){
           tabBarInactiveTintColor: Colors.disabled,
           tabBarStyle: {
             backgroundColor: Colors.primary,
-            display: route.name === 'Welcome' ? 'none' : 'flex'
+            display: route.name === 'Email' ? 'none' : 'flex'
           },
         })
       }
     >
       <Tab.Screen name="Menu" component={Menu} options={{ headerShown: false }} />
       <Tab.Screen name="Perfil" component={Profile} options={{ headerShown: false }} />
+      <Tab.Screen name="Terms" component={Terms} options={{ tabBarButton: () => null, tabBarStyle: { display: 'none' }}}  />
+      <Tab.Screen name="Policy" component={Policy} options={{ tabBarButton: () => null, tabBarStyle: { display: 'none' }}}  />
     </Tab.Navigator>
   )
 }
