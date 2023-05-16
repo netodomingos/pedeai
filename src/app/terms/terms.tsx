@@ -1,4 +1,4 @@
-import { Text, SafeAreaView, ScrollView, StyleSheet } from 'react-native'
+import { Text, SafeAreaView, ScrollView, StyleSheet, useWindowDimensions, Platform, StatusBar, View } from 'react-native'
 import React from 'react'
 import Header from '../../components/header'
 
@@ -8,18 +8,19 @@ import { useNavigateBottomTabs } from '../../hooks/useNavigate'
 
 export default function Terms() {
  const navigate = useNavigateBottomTabs()
+ const { height } = useWindowDimensions()
 
   return (
-    <>
+    <SafeAreaView>
       <Header onClick={() => navigate('Perfil')} />
-      <SafeAreaView style={styles.container}>
-        <ScrollView>
-          <Text style={styles.title}>{terms.title}</Text>
-          <Text style={styles.subTitle}>{terms.subTitle}</Text>
-          <Text style={styles.content}>{terms.content}</Text>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+      <View style={styles.container}>
+          <ScrollView style={{ height: height - 60 }}>
+            <Text style={styles.title}>{terms.title}</Text>
+            <Text style={styles.subTitle}>{terms.subTitle}</Text>
+            <Text style={styles.content}>{terms.content}</Text>
+          </ScrollView>
+      </View>
+    </SafeAreaView>
   )
 }
 

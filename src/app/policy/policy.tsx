@@ -1,4 +1,4 @@
-import { Text, SafeAreaView, ScrollView, StyleSheet } from 'react-native'
+import { Text, SafeAreaView, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native'
 import React from 'react'
 import Header from '../../components/header'
 
@@ -8,18 +8,19 @@ import { useNavigateBottomTabs } from '../../hooks/useNavigate'
 
 export default function Policy() {
   const navigate = useNavigateBottomTabs()
+  const { height } = useWindowDimensions()
   
   return (
-    <>
+    <SafeAreaView>
       <Header onClick={() => navigate('Perfil')} />
-      <SafeAreaView style={styles.container}>
-        <ScrollView>
+      <View style={styles.container}>
+        <ScrollView style={{ height: height - 60 }}>
           <Text style={styles.title}>{policy.title}</Text>
           <Text style={styles.date}>Data da última atualização: {policy.last_update}</Text>
           <Text style={styles.content}>{policy.content}</Text>
         </ScrollView>
-      </SafeAreaView>
-    </>
+      </View>
+    </SafeAreaView>
   )
 }
 

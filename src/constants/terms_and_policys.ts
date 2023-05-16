@@ -184,7 +184,6 @@ const terms = {
     content: `
     Por favor, leia com atenção os termos e condições. Ao se cadastrar no pede.ai o cliente estará de acordo com as condições e termos aqui estabelecidos.
 
-
     1. SERVIÇOS OFERECIDOS
     
     1.1 Este TERMO se aplica para regular o uso do serviço oferecido pelo pede.ai aos nossos clientes, que solicitam a aquisição de produtos, fornecidos pelos estabelecimentos comerciais cadastrados no pede.ai, tendo o cliente que fazer o pagamento na entrega diretamente ao estabelecimento ou fazer o pagamento através do aplicativo com cartão de crédito ou PIX.
@@ -193,7 +192,6 @@ const terms = {
     
     1.3 Desta forma o cliente fica ciente que o serviço oferecido pelo pede.ai, é voltado apenas a intermediação para comercialização de produtos, não se responsabilizando no preparo, na embalagem, e no meios na entrega do produto, onde os itens mencionados são de total responsabilidade do estabelecimento, onde qualquer reclamação relacionada aos quatro itens mencionados anteriormente serão de responsabilidade do estabelecimento além de problemas no preparo e na entrega do produto.
     
-    
     2. CADASTRO
     
     2.1 O cliente, para utilizar dos itens mencionados acima, deverá ter capacidade jurídica para atos civis e deverá, necessariamente, prestar as informaçõs exigidas no cadastro, se responsabilizando (inclusive cível e criminal) pela as informações fornecidas no cadastro, que poderá ser verificado, a qualquer momento, pelo pede.ai.
@@ -201,7 +199,6 @@ const terms = {
     2.1.1 Em caso de informações incorretas, deve-se enviar documentação que comprove a correção, onde o pede.ai não concluirá o cadastro impedindo o usuário de utilizar os serviços online, até que a situação seja regularizada.
     
     2.2 Após o usuá;rio ter efetuado com sucesso o cadastro, o mesmo terá acesso ao serviço por meio de login e senha, dados que ficaram sob sua exclusiva responsabilidade qualquer solicitação de serviço que seja feita com o uso de login e senha de sua titularidade.
-    
     
     3. OBRIGAÇÕES DO USUÁRIO
     
@@ -215,13 +212,11 @@ const terms = {
     
     3.5 O usuário concorda com o uso das informações de avaliações e feedbacks do serviços dos estabelecimentos e do pede.ai, conforme descrito nos TERMOS DE PRIVACIDADE do pede.ai.
     
-    
     4. OBRIGAÇÕES DO PEDE.AI
     
     4.1 Disponibilizar no aplicativo pede.ai, espaço virtual que permita ao usuário devidamente cadastrado efetivar pedidos de compra de produtos anunciados e comercializados pelos estabelecimentos e, também, disponibilizar ao usuário meios de pagamento do preço dos produtos para escolha do usuário.
     
     4.2 Proteger, por meio de armazenamento em servidores ou quaisquer outros meios de alta segurança, a confidencialidade de todas as informações e cadastros relativos aos usuários, assim como valores atinentes à operações financeiras advindas da operacionalização dos serviços previstos no presente termo. Contudo, não responderá pela reparação de prejuízos que possam ser derivados de apreensão e cooptação de dados por parte de terceiros que, rompendo os sistemas de segurança, consigam acessar essas informações.
-    
     
     5. MODIFICAÇÕES DESTE TERMO
     
@@ -229,16 +224,13 @@ const terms = {
     
     5.2 As novas condições entrarão em vigência assim que sua veiculada no site, sendo possível ao usuário manifestar oposição a quaisquer dos termos modificados, desde que o faça por escrito, através do site pede.ai o que gerará o cancelamento de seu cadastro.
     
-    
     6. CANAL DE COMUNICAÇÃO
     
     6.1 Para estabelecer contato entre pede.ai e o usuário fica disponibilizado o formulário de contato do site pede.ai e endereço de e-mail suporte@pede.ai, sendo certo que o usuário se responsabiliza, igualmente, a manter em seu cadastro endereço eletrônico atual por intermédio do qual se farão as comunicações a ele dirigidas pelo pede.ai, desde logo emprestando-se validade jurídica e efetividade a esse meio eletrônico de troca de informações recíprocas.
     
-    
     7. ACEITAÇÃO DO TERMO DE USO
     
     7.1 O usuário declara ter lido, entendido e que aceita todas as regras, condições e obrigações estabelecidas no presente TERMO.
-    
     
     8. FORO DE ELEIÇÃO
     
