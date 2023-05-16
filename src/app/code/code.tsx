@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { IRoute } from '../../interfaces/IRoute'
 import { useLogin } from '../../hooks/useAuth'
 import { useDispatch } from '../../hooks/useNavigate'
+import { Colors } from '../../constants/colors'
 
 
 export default function Code({ route }: IRoute) {
@@ -57,7 +58,8 @@ export default function Code({ route }: IRoute) {
 
 const styles = StyleSheet.create({
   scrollView: {
-    flex: 1
+    flex: 1,
+    backgroundColor: Colors.white
   },
   container: {
     flex: 1,

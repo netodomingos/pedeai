@@ -9,6 +9,7 @@ import Input from '../../components/input'
 import { handleValidEmail } from '../../utils/EmailValid'
 import { useSendToken } from '../../hooks/useSendToken'
 import { useNavigate } from '../../hooks/useNavigate'
+import { Colors } from '../../constants/colors'
 
 export default function Email() {
   const [email, setEmail] = useState('')
@@ -63,7 +64,8 @@ export default function Email() {
 
 const styles = StyleSheet.create({
   scrollView: {
-    flex: 1
+    flex: 1,
+    backgroundColor: Colors.white
   },
   container: {
     flex: 1,

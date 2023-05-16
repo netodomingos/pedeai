@@ -5,6 +5,7 @@ import { useNavigate } from '../../hooks/useNavigate'
 import Button from '../../components/button'
 import Title from '../../components/title'
 import SubTitle from '../../components/subtitle'
+import { Colors } from '../../constants/colors'
 
 export default function Welcome() {
   const navigate = useNavigate()
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     flexDirection: 'column',
+    backgroundColor: Colors.white
   },
   imageContainer: {
     justifyContent: 'center',

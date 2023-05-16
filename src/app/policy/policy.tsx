@@ -11,9 +11,9 @@ export default function Policy() {
   const { height } = useWindowDimensions()
   
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Header onClick={() => navigate('Perfil')} />
-      <View style={styles.container}>
+      <View style={styles.insideContainer}>
         <ScrollView style={{ height: height - 60 }}>
           <Text style={styles.title}>{policy.title}</Text>
           <Text style={styles.date}>Data da última atualização: {policy.last_update}</Text>
@@ -27,6 +27,10 @@ export default function Policy() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: Colors.white,
+    flex: 1,
+  }, 
+  insideContainer: {
     marginHorizontal: 8,
   },
   date: {

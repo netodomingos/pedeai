@@ -6,6 +6,7 @@ import Toast from 'react-native-toast-message';
 import { AuthProvider } from './src/context/tokenContext';
 
 import Index from './index';
+import { Colors } from './src/constants/colors';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,7 +19,7 @@ export default function App() {
   } else {
     return (
       <AuthProvider>
-        <StatusBar style="auto" />
+        <StatusBar style="auto" backgroundColor={Colors.primary}  />
         <Index />
         <Toast />
       </AuthProvider>
