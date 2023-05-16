@@ -7,7 +7,7 @@ export default function Menu() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <HeaderHome />
+        <HeaderHome storeName='Loja do pede.ai' time='50 - 60 min.'/>
       </ScrollView>
     </SafeAreaView>
   )
@@ -16,6 +16,5 @@ export default function Menu() {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white
   }
 })
