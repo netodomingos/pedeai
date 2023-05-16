@@ -23,7 +23,6 @@ export default function Profile() {
           title='Termos e condições'
           onClick={() => navigate("Terms")}
         />
-
         <ButtonProfile 
           icon='shield-alert-outline'
           title='Política de privacidade'
@@ -48,7 +47,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+    marginHorizontal: '2%',
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   imageContainer: {
     justifyContent: 'center',
@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
   },
   routesContainer: {
     justifyContent: 'center',
-    marginLeft: '5%',
     marginBottom: 50
   },
   ButtonContainer: {

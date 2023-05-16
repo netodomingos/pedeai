@@ -8,7 +8,7 @@ export default function Header({onClick}: IButton) {
   return (
     <View style={styles.container}>
         <TouchableOpacity style={styles.buttonBack} onPress={onClick}>
-            <Feather name="arrow-left" size={24} color={Colors.primary} />    
+            <Feather name="arrow-left" size={30} color={Colors.primary} />    
         </TouchableOpacity>
     </View>
   )
