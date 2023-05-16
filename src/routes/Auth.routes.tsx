@@ -42,8 +42,8 @@ export default function AuthRoutes(){
     >
       <Tab.Screen name="Menu" component={Menu} options={{ headerShown: false }} />
       <Tab.Screen name="Perfil" component={Profile} options={{ headerShown: false }} />
-      <Tab.Screen name="Terms" component={Terms} options={{ tabBarButton: () => null, tabBarStyle: { display: 'none' }}}  />
-      <Tab.Screen name="Policy" component={Policy} options={{ tabBarButton: () => null, tabBarStyle: { display: 'none' }}}  />
+      <Tab.Screen name="Terms" component={Terms} options={{ headerShown: false, tabBarButton: () => null, tabBarStyle: { display: 'none' }}}  />
+      <Tab.Screen name="Policy" component={Policy} options={{ headerShown: false, tabBarButton: () => null, tabBarStyle: { display: 'none' }}}  />
     </Tab.Navigator>
   )
 }
