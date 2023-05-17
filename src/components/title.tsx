@@ -1,6 +1,6 @@
 import { Text, StyleSheet } from 'react-native'
 import { IText } from '../interfaces/ITexts'
-import { Colors } from '../constants/colors';
+import { Colors, Fonts } from '../constants/styles';
 
 export default function Title({ text }: IText) {
   return (
@@ -12,6 +12,6 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: 'SemiBold',
         color: Colors.font,
-        fontSize: 16
+        fontSize: Fonts.title
     }
   });

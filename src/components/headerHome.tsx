@@ -1,6 +1,6 @@
 import { View, Image, StyleSheet, useWindowDimensions, Text } from 'react-native'
 import React from 'react'
-import { Colors } from '../constants/colors'
+import { Colors, Fonts } from '../constants/styles'
 import { IHeaderHome } from '../interfaces/IHeaderHome'
 
 export default function HeaderHome({ storeName, time }: IHeaderHome) {
@@ -42,14 +42,14 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'SemiBold',
     color: Colors.font,
-    fontSize: 18,
+    fontSize: Fonts.title,
     marginTop: 15,
     textAlign: 'center'
   },
   subTitle: {
     fontFamily: 'Regular',
     color: Colors.font,
-    fontSize: 12,
+    fontSize: Fonts.description,
     textAlign: 'center'
   }
 })

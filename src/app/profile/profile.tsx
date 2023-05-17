@@ -5,7 +5,7 @@ import { useNavigateBottomTabs } from '../../hooks/useNavigate'
 
 import Title from '../../components/title'
 import ButtonProfile from '../../components/buttonProfile'
-import { Colors } from '../../constants/colors'
+import { Colors } from '../../constants/styles'
 
 export default function Profile() {
   const logout = useLogout()

@@ -1,6 +1,6 @@
 import { View, Text, TextInput, StyleSheet, useWindowDimensions } from 'react-native'
 import { Feather } from '@expo/vector-icons';
-import { Colors } from '../constants/colors';
+import { Colors, Fonts } from '../constants/styles';
 import { IInput } from '../interfaces/IInput';
 import { handleValidEmail } from '../utils/EmailValid';
 import { useState } from 'react';
@@ -49,12 +49,12 @@ const styles = StyleSheet.create({
 		borderBottomWidth: 0.5,
 		height: 28,
 		fontFamily: 'Regular',
-		fontSize: 16,
+		fontSize: Fonts.title,
 		marginLeft: 10
 	},
 	errorText: {
 		fontFamily: 'Regular',
-		fontSize: 14,
+		fontSize: Fonts.subTitle,
 		color: Colors.primary,
 		marginTop: 5
 	},

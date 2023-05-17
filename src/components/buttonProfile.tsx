@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 import { IButtonProfile } from '../interfaces/IButton'
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
-import { Colors } from '../constants/colors';
+import { Colors, Fonts } from '../constants/styles';
 
 export default function buttonProfile({ icon, title, haveStick, onClick}: IButtonProfile) {
   return (
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: 'SemiBold',
-        fontSize: 16,
+        fontSize: Fonts.title,
         color: Colors.font,
         marginLeft: 5
     },

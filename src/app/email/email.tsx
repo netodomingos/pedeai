@@ -9,7 +9,7 @@ import Input from '../../components/input'
 import { handleValidEmail } from '../../utils/EmailValid'
 import { useSendToken } from '../../hooks/useSendToken'
 import { useNavigate } from '../../hooks/useNavigate'
-import { Colors } from '../../constants/colors'
+import { Colors } from '../../constants/styles'
 
 export default function Email() {
   const [email, setEmail] = useState('')

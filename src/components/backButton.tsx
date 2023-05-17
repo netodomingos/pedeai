@@ -1,7 +1,7 @@
 import { TouchableOpacity, StyleSheet } from 'react-native'
 import { IButton } from '../interfaces/IButton'
 import { MaterialIcons } from '@expo/vector-icons';
-import { Colors } from '../constants/colors';
+import { Colors } from '../constants/styles';
 import { useNavigation } from '@react-navigation/native';
 
 export default function BackButton() {

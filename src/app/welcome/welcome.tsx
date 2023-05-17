@@ -5,7 +5,7 @@ import { useNavigate } from '../../hooks/useNavigate'
 import Button from '../../components/button'
 import Title from '../../components/title'
 import SubTitle from '../../components/subtitle'
-import { Colors } from '../../constants/colors'
+import { Colors } from '../../constants/styles'
 
 export default function Welcome() {
   const navigate = useNavigate()

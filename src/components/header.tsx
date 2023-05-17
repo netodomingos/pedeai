@@ -1,7 +1,7 @@
 import { Platform, StatusBar, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Feather } from '@expo/vector-icons';
-import { Colors } from '../constants/colors';
+import { Colors } from '../constants/styles';
 import { IButton } from '../interfaces/IButton';
 
 export default function Header({onClick}: IButton) {

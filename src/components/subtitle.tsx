@@ -1,6 +1,6 @@
 import { Text, StyleSheet } from 'react-native'
 import { IText } from '../interfaces/ITexts'
-import { Colors } from '../constants/colors';
+import { Colors, Fonts } from '../constants/styles';
 
 export default function SubTitle({ text }: IText) {
   return (
@@ -12,6 +12,6 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: 'Regular',
         color: Colors.font,
-        fontSize: 14
+        fontSize: Fonts.subTitle
     }
   });

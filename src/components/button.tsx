@@ -1,6 +1,6 @@
 import { TouchableOpacity, Text, StyleSheet, ActivityIndicator } from 'react-native'
 import { IButton } from '../interfaces/IButton'
-import { Colors } from '../constants/colors';
+import { Colors, Fonts } from '../constants/styles';
 import { Feather } from '@expo/vector-icons';
 
 export default function Button({ text, disabled, icon, loading, onClick }: IButton) {
@@ -30,11 +30,11 @@ const styles = StyleSheet.create({
       justifyContent: 'center'
     },
     text: {
-        fontFamily: 'SemiBold',
-        color: Colors.white,
-        fontSize: 16
+      fontFamily: 'SemiBold',
+      color: Colors.white,
+      fontSize: Fonts.title
     },
     icon: {
-        marginRight: 10
+      marginRight: 10
     }
   });

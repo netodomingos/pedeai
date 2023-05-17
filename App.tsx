@@ -6,7 +6,7 @@ import Toast from 'react-native-toast-message';
 import { AuthProvider } from './src/context/tokenContext';
 
 import Index from './index';
-import { Colors } from './src/constants/colors';
+import { Colors } from './src/constants/styles';
 
 export default function App() {
   const [fontsLoaded] = useFonts({

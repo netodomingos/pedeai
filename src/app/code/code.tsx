@@ -7,8 +7,7 @@ import CodeField from '../../components/codeField'
 import { useState } from 'react'
 import { IRoute } from '../../interfaces/IRoute'
 import { useLogin } from '../../hooks/useAuth'
-import { useDispatch } from '../../hooks/useNavigate'
-import { Colors } from '../../constants/colors'
+import { Colors } from '../../constants/styles'
 
 
 export default function Code({ route }: IRoute) {

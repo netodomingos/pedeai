@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import { Colors } from '../constants/colors';
+import { Colors } from '../constants/styles';
 
 import Menu from '../app/menu/menu';
 import Profile from '../app/profile/profile';

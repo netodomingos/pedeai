@@ -1,7 +1,7 @@
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native'
 import React from 'react'
 import HeaderHome from '../../components/headerHome'
-import { Colors } from '../../constants/colors'
+import { Colors } from '../../constants/styles'
 
 export default function Menu() {
   return (

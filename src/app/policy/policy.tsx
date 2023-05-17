@@ -3,7 +3,7 @@ import React from 'react'
 import Header from '../../components/header'
 
 import { policy } from '../../constants/terms_and_policys'
-import { Colors } from '../../constants/colors'
+import { Colors, Fonts } from '../../constants/styles'
 import { useNavigateBottomTabs } from '../../hooks/useNavigate'
 
 export default function Policy() {
@@ -36,19 +36,19 @@ const styles = StyleSheet.create({
   date: {
     marginTop: 20,
     textAlign: 'left',
-    fontSize: 14,
+    fontSize: Fonts.subTitle,
     fontFamily: 'Regular',
     color: Colors.font
   },
   title: {
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: Fonts.title,
     fontFamily: 'Regular',
     color: Colors.font
   },
   content: {
     textAlign: 'left',
-    fontSize: 14,
+    fontSize: Fonts.description,
     fontFamily: 'Regular',
     color: Colors.font
   }

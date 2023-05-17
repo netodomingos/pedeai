@@ -7,7 +7,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
-import { Colors } from '../constants/colors';
+import { Colors, Fonts } from '../constants/styles';
 import { ICodeField } from '../interfaces/ICodeFiled';
 
 
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         lineHeight: 50,
         marginHorizontal: 3,
-        fontSize: 24,
+        fontSize: Fonts.cell,
         borderWidth: 2,
         textAlign: 'center',
         fontFamily: 'SemiBold'
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     },
     errorText: {
         fontFamily: 'Regular',
-		fontSize: 14,
+		fontSize: Fonts.subTitle,
 		color: Colors.primary,
 		marginTop: 5,
         textAlign: 'center'

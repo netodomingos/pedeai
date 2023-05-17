@@ -1,6 +1,6 @@
-import { StackNavigationProp, createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import { Colors } from '../constants/colors';
+import { Colors } from '../constants/styles';
 
 import BackButton from '../components/backButton';
 
