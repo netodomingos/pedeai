@@ -4,9 +4,15 @@ import Toast from "react-native-toast-message"
 import AuthContext from '../context/tokenContext'
 
 const useLogout = () => {
-    const { setIsLogged } = useContext(AuthContext)
+    const { setToken, setTokenDate, setIsLogged } = useContext(AuthContext)
 	const handleLogout = async () => {
-		await AsyncStorage.removeItem('@token')
+        await Promise.all([
+            AsyncStorage.removeItem('@token'),
+            AsyncStorage.removeItem('@token_date'),
+        ])
+
+        setToken("")
+        setTokenDate("")
 		Toast.show({
 				type: 'success',
 				text1: 'Você foi deslogado com sucesso!',
@@ -20,11 +26,16 @@ const useLogout = () => {
 }
 
 const useLogin = () => {
-    const { setToken, setIsLogged } = useContext(AuthContext)
+    const { setToken, setTokenDate, setIsLogged } = useContext(AuthContext)
 
-	const handleLogin = async (token: string) => {
-		await AsyncStorage.setItem('@token', token)
+	const handleLogin = async (token: string, token_date: string) => {
+        await Promise.all([
+            AsyncStorage.setItem('@token', token),
+            AsyncStorage.setItem('@token_date', token_date)
+        ])
+        
         setToken(token)
+        setTokenDate(token_date)
 		Toast.show({
             type: 'success',
             text1: 'Você foi logado com sucesso!',
@@ -32,8 +43,8 @@ const useLogin = () => {
         setIsLogged(true)
 	}
 
-	return (token: string) => {
-		handleLogin(token)
+	return (token: string, token_date: string) => {
+		handleLogin(token, token_date)
 	}
 }
 
