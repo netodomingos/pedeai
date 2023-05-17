@@ -5,8 +5,37 @@ import { IStore } from "../interfaces/IStore";
 import AuthContext from "../context/tokenContext";
 import { useLogout } from "./useAuth";
 
+const DEFAULT_STORE: IStore = {
+  message: "Requisição feita com sucesso.",
+  data: {
+    _id: "3243sfd",
+    name_company: "Restaurante Silva",
+    time_delivery: "50 - 65 min",
+    banner: "",
+    logo: "https://pedeaimerchant.sfo2.digitaloceanspaces.com/merchant_953/resized/logo-604948.png",
+    categories: [
+        {
+          name_category: "Lançamentos",
+          itens: [
+            {
+              id: "63e550",
+              title: "Sub Carne Seca c/ Cream Cheese 15cm",
+              description: "Pão, Carne Seca c/ Cream Cheese, Queijo da sua preferência.",
+              tag_new: 0,
+              img: "https://pedeaimerchant.sfo2.digitaloceanspaces.com/merchant_6548/resized/item_770742.png",
+              size: "30cm",
+              price: 37.5,
+              discount_price: 37.5,
+              tag_discount: 0
+            },
+          ]
+        }
+    ]
+  }
+};
+
 export function useGetStore() {
-    const [result, setResult] = useState<IStore>();
+    const [result, setResult] = useState<IStore>(DEFAULT_STORE);
     const [loading, setLoading] = useState(false);
     const { token, tokenDate } = useContext(AuthContext)
 
@@ -21,6 +50,10 @@ export function useGetStore() {
         }
       })
       .then(response => {
+
+        console.log(response.data);
+        
+
         setResult(response.data);
         setLoading(false)
       })

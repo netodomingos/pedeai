@@ -3,8 +3,9 @@ import React from 'react'
 import { Colors, Fonts } from '../constants/styles'
 import { IHeaderHome } from '../interfaces/IHeaderHome'
 
-export default function HeaderHome({ storeName, time }: IHeaderHome) {
+export default function HeaderHome({ storeName, time, logo }: IHeaderHome) {
   const { width } = useWindowDimensions()
+  
   return (
     <View style={styles.container}>
       <Image 
@@ -13,7 +14,7 @@ export default function HeaderHome({ storeName, time }: IHeaderHome) {
           resizeMode='cover'
         />
         <Image 
-          source={require('../../assets/images/logo.png')}
+          source={{uri: logo}}
           style={styles.icon}
           resizeMode='cover'
         />

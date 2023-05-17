@@ -1,4 +1,5 @@
 export interface IHeaderHome {
     storeName:string
-    time: string
+    time: string,
+    logo: string,
 }
