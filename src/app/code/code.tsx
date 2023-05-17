@@ -16,11 +16,12 @@ export default function Code({ route }: IRoute) {
   const [code, setCode] = useState('')
   const [error, setError] = useState(false)
   
-  const codeRecived = route.params?.token  
+  const token = route.params?.token  
+  const token_date = route.params?.token_date
 
   async function handleVerifyCode(){
-    if(code === codeRecived){
-      await handlelogin(codeRecived)
+    if(code === token){
+      await handlelogin(token, token_date)
     } else {
       setError(true)
     }

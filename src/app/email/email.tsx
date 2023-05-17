@@ -24,7 +24,8 @@ export default function Email() {
   
   function handleVerifyResult(){
     navigate('Code', {
-      token: result?.token
+      token: result?.token,
+      token_date: result?.token_date,
     })
   }
 
