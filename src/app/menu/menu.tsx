@@ -1,8 +1,13 @@
-import { FlatList, SafeAreaView, ScrollView, StyleSheet, View, Text } from 'react-native'
-import React, { useEffect } from 'react'
+import { SafeAreaView, ScrollView, StyleSheet, View, Text, ListRenderItem, VirtualizedList } from 'react-native'
+import React, { useCallback, useEffect } from 'react'
 import HeaderHome from '../../components/headerHome'
 import { useGetStore } from '../../hooks/useGetStore'
 import { Colors } from '../../constants/styles'
+import { FlatList } from 'react-native-gesture-handler'
+import { ICategories } from '../../interfaces/IStore'
+import uuid from 'react-native-uuid';
+import Categories from '../../components/categories'
+import ItensComponent from '../../components/items'
 
 export default function Menu() {
   const { getStore, result, loading} = useGetStore()
@@ -11,31 +16,37 @@ export default function Menu() {
     await getStore()
   }
 
+  const renderCategories: ListRenderItem<ICategories> = useCallback(({ item, index }) => <Categories key={String(`${item.name_category}-${index}`)} title={item.name_category} onClick={() => {}} focus={false}/>, [])
+  
+  const renderItems: ListRenderItem<ICategories> = useCallback(({ item, index }) => <ItensComponent key={String(`${item.name_category}-${index}`)} title={item.name_category} itens={item.itens} />, [])
+
   useEffect(() => {
     handleGetStore()
   }, [])
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        {loading === false && (
-          <>
-            <HeaderHome storeName={result.data.name_company} time={result.data.time_delivery} logo={result.data.logo}/>
-
-            {/* <FlatList 
-              horizontal
-              data={result.data.categories}
-              renderItem={({ item, index }) => (
-                <View>
-                  <Text>{item.name_category}</Text>
-                </View>
-              )}
-            /> */}
-
-          </>
-        )}
-
-      </ScrollView>
+      {loading === false && (
+        <FlatList 
+          data={result.data.categories.flat()}
+          keyExtractor={({ name_category }, index) => String(`${name_category}-${index}`)}
+          initialNumToRender={10}
+          renderItem={renderItems}
+          ListHeaderComponent={
+            <>
+              <HeaderHome storeName={result.data.name_company} time={result.data.time_delivery} logo={result.data.logo}/>
+              <FlatList
+                data={result.data.categories.flat()}
+                renderItem={renderCategories}
+                keyExtractor={({ name_category }, index) => String(`${name_category}-${index}`)}
+                horizontal
+                initialNumToRender={10}
+                showsHorizontalScrollIndicator={false}
+              />
+            </>
+          }
+        />
+      )}
     </SafeAreaView>
   )
 }
