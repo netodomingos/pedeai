@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import AuthRoutes from './src/routes/Auth.routes'
 import Routes from './src/routes/Routes'
