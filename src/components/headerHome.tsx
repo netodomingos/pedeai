@@ -27,9 +27,11 @@ export default function HeaderHome({ storeName, time, logo }: IHeaderHome) {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
+    maxHeight: 200,
+    marginBottom: 10,
   },
   banner: {
-    maxHeight: '30%',
+    maxHeight: '70%',
   },
   icon: {
     height: 70,
@@ -38,13 +40,13 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     borderColor: Colors.white,
     position: 'absolute',
-    top: '20%'
+    top: '48%'
   },
   title: {
     fontFamily: 'SemiBold',
     color: Colors.font,
     fontSize: Fonts.title,
-    marginTop: 15,
+    marginTop: 20,
     textAlign: 'center'
   },
   subTitle: {
