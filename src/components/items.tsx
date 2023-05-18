@@ -7,6 +7,7 @@ import { Itens } from '../interfaces/IStore'
 type Item = {
     title: string,
     itens: Array<Itens>
+	index: number
 }
 
 export default function ItensComponent({ title, itens }: Item) {
