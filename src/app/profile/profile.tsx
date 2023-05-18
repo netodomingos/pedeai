@@ -6,10 +6,19 @@ import { useNavigateBottomTabs } from '../../hooks/useNavigate'
 import Title from '../../components/title'
 import ButtonProfile from '../../components/buttonProfile'
 import { Colors } from '../../constants/styles'
+import Toast from 'react-native-toast-message'
 
 export default function Profile() {
   const logout = useLogout()
   const navigate = useNavigateBottomTabs()
+
+  function handleLogOut(){
+    logout()
+    Toast.show({
+      type: 'sucess',
+      text1: 'VocÇe foi deslogado com sucesso!',
+    });
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -44,7 +53,7 @@ export default function Profile() {
           <ButtonProfile 
             icon='exit-to-app'
             title='Sair'
-            onClick={() => logout()}
+            onClick={() => handleLogOut()}
             haveStick={true}
           />
         </View>
