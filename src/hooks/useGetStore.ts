@@ -46,11 +46,6 @@ export function useGetStore() {
         AsyncStorage.getItem('@token'),
         AsyncStorage.getItem('@token_date')
     ])
-
-    console.log(token);
-    console.log(tokenDate);
-    
-    
       setLoading(true)
       await API.get(`/store`, {
         headers: {
@@ -63,12 +58,13 @@ export function useGetStore() {
         setLoading(false)
       })
       .catch((error) => {
-
-        console.log(error.response);
-        
-
         if(error.response.status === 401){
           logout()
+          Toast.show({
+            type: 'error',
+            text1: 'Seu seção expirou!',
+            text2: 'Para continuar navegando, faça login no App novamente!'
+        });
         } else {
           setLoading(false)
         }

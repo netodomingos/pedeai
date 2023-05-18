@@ -10,13 +10,8 @@ const useLogout = () => {
             AsyncStorage.removeItem('@token'),
             AsyncStorage.removeItem('@token_date'),
         ])
-
         setToken("")
         setTokenDate("")
-		Toast.show({
-				type: 'success',
-				text1: 'Você foi deslogado com sucesso!',
-		});
         setIsLogged(false)
 	}
 
