@@ -3,21 +3,21 @@ export interface IStore {
     data: Data
   }
 
-  type Data = {
+  export interface Data {
     _id: string;
     name_company: string;
     time_delivery: string;
     banner: string;
     logo: string;
-    categories: Array<Categories>
+    categories: Array<Array<ICategories>>
   }
 
-  type Categories = {
+  export interface ICategories {
     name_category: string;
     itens: Array<Itens>
   }
 
-  type Itens = {
+  export interface Itens {
     id: string;
     title: string;
     description: string;

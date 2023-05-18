@@ -4,6 +4,7 @@ import API from "../services/pedeai";
 import { IStore } from "../interfaces/IStore";
 import AuthContext from "../context/tokenContext";
 import { useLogout } from "./useAuth";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const DEFAULT_STORE: IStore = {
   message: "Requisição feita com sucesso.",
@@ -14,7 +15,7 @@ const DEFAULT_STORE: IStore = {
     banner: "",
     logo: "https://pedeaimerchant.sfo2.digitaloceanspaces.com/merchant_953/resized/logo-604948.png",
     categories: [
-        {
+        [{
           name_category: "Lançamentos",
           itens: [
             {
@@ -29,7 +30,7 @@ const DEFAULT_STORE: IStore = {
               tag_discount: 0
             },
           ]
-        }
+        }]
     ]
   }
 };
@@ -37,11 +38,19 @@ const DEFAULT_STORE: IStore = {
 export function useGetStore() {
     const [result, setResult] = useState<IStore>(DEFAULT_STORE);
     const [loading, setLoading] = useState(false);
-    const { token, tokenDate } = useContext(AuthContext)
 
     const logout = useLogout()
 
     async function getStore() {
+    const [token, tokenDate]  = await Promise.all([
+        AsyncStorage.getItem('@token'),
+        AsyncStorage.getItem('@token_date')
+    ])
+
+    console.log(token);
+    console.log(tokenDate);
+    
+    
       setLoading(true)
       await API.get(`/store`, {
         headers: {
@@ -50,14 +59,14 @@ export function useGetStore() {
         }
       })
       .then(response => {
-
-        console.log(response.data);
-        
-
         setResult(response.data);
         setLoading(false)
       })
       .catch((error) => {
+
+        console.log(error.response);
+        
+
         if(error.response.status === 401){
           logout()
         } else {
