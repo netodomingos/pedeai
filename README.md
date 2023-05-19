@@ -43,6 +43,12 @@ O aplicativo Pede.ai foi desenvolvido utilizando as seguintes tecnologias:
   expo start
 ```
 
+## Download APK
+
+- [APK ANDROID](https://expo.dev/artifacts/eas/se6Zc8itQTHAXnEcNVuUhL.apk)
+
 ## Autores
 
 - [@netodomingos](https://github.com/netodomingos)
+
+
