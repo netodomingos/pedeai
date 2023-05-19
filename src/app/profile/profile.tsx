@@ -15,8 +15,8 @@ export default function Profile() {
   function handleLogOut(){
     logout()
     Toast.show({
-      type: 'sucess',
-      text1: 'VocÇe foi deslogado com sucesso!',
+      type: 'success',
+      text1: 'Deslogado com sucesso!',
     });
   }
 
