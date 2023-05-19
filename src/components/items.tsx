@@ -15,8 +15,8 @@ export default function ItensComponent({ title, itens }: Item) {
   return (
     <View style={[styles.container, { width: width }]}>
         <Text style={styles.title}>{title}</Text>
-        {itens.map(it => (
-            <TouchableOpacity style={styles.itemContent}>
+        {itens.map((it, index) => (
+            <TouchableOpacity style={itens.length === index + 1 ? styles.itemContentWithoutBorder : styles.itemContent}>
               <View style={styles.internContent}>
                 <Text style={styles.itemTitle} numberOfLines={2} ellipsizeMode='tail'>{it.title}</Text>
 					<View style={styles.horizontalSeparator}>
@@ -52,13 +52,14 @@ export default function ItensComponent({ title, itens }: Item) {
 const styles = StyleSheet.create({
     container: {
       marginVertical: 10,
-			paddingHorizontal: 10
     },
     title: {
-			fontFamily: 'SemiBold',
-			fontSize: Fonts.title,
-			color: Colors.font,
-			marginBottom: 20
+		fontFamily: 'SemiBold',
+		fontSize: Fonts.title,
+		color: Colors.font,
+		paddingVertical: 10,
+		paddingLeft: 10,
+		backgroundColor: Colors.background
     },
 	itemTitle: {
 		fontFamily: 'SemiBold',
@@ -91,7 +92,17 @@ const styles = StyleSheet.create({
 		borderBottomWidth: 1.2,
 		borderBottomColor: Colors.disabled,
 		marginBottom: 10,
-		paddingVertical: 10
+		paddingVertical: 10,
+		marginHorizontal: 10
+	},
+	itemContentWithoutBorder: {
+		paddingHorizontal: 10,
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		maxHeight: '100%',
+		marginBottom: 10,
+		paddingVertical: 10,
 	},
 	internContent: {
 		maxWidth: '70%' 
