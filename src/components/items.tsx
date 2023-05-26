@@ -1,5 +1,5 @@
 import { StyleSheet, View, Text, Image, useWindowDimensions, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { memo } from 'react'
 import { Colors, Fonts } from '../constants/styles'
 import { Itens } from '../interfaces/IStore'
 
@@ -10,7 +10,7 @@ type Item = {
 	index: number
 }
 
-export default function ItensComponent({ title, itens }: Item) {
+function ItensComponent({ title, itens }: Item) {
   const { width } = useWindowDimensions()	
   return (
     <View style={[styles.container, { width: width }]}>
@@ -48,6 +48,8 @@ export default function ItensComponent({ title, itens }: Item) {
     </View>
   )
 }
+
+export default memo(ItensComponent)
 
 const styles = StyleSheet.create({
     container: {

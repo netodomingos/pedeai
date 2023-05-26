@@ -1,20 +1,22 @@
 import { Text, TouchableOpacity, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { memo } from 'react'
 import { Colors, Fonts } from '../constants/styles'
 
-type Categories = {
+type ICategories = {
     title: string,
     onClick: () => void,
     focus: boolean
 }
 
-export default function Categories({ title, focus, onClick }: Categories) {
+function Categories({ title, focus, onClick }: ICategories) {
   return (
     <TouchableOpacity style={[styles.container, focus === true && styles.focusContainer]} onPress={onClick}>
       <Text style={[styles.title, focus === true && styles.focusText]}>{title}</Text>
     </TouchableOpacity>
   )
 }
+
+export default memo(Categories)
 
 const styles = StyleSheet.create({
     container: {
