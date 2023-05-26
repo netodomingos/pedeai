@@ -9,11 +9,11 @@ import { Colors } from '../../constants/styles'
 import Toast from 'react-native-toast-message'
 
 export default function Profile() {
-  const logout = useLogout()
+
   const navigate = useNavigateBottomTabs()
 
   function handleLogOut(){
-    logout()
+    useLogout()
     Toast.show({
       type: 'success',
       text1: 'Deslogado com sucesso!',

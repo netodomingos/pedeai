@@ -15,9 +15,7 @@ const useLogout = () => {
         setIsLogged(false)
 	}
 
-	return () => {
-		handleLogout()
-	}
+	handleLogout()
 }
 
 const useLogin = () => {
